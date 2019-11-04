@@ -114,22 +114,29 @@ export class TelaPrincipalComponent implements OnInit {
     apagaItemCarrinho(id) {
 
         let arrayAux = []
+
+        //this.itensCarrinho.filter( d => {d.product.id !== id})
+    
+        //this.itensCarrinho.push(obj)
+        //this.total = this.total - obj.product.price.value
+        //this.parcial = this.parcial - obj.product.price.installmentValue
+        //console.log(this.total)
+
         //this.itensCarrinho = this.itensCarrinho.filter(d => {d.product.id != id});
         for (let i = 0; i <= this.itensCarrinho.length - 1; i++) {
-            console.log(this.itensCarrinho[i].product.id);
+            
             if (id != this.itensCarrinho[i].product.id) {
+                
                 arrayAux.push(this.itensCarrinho[i])
-                this.total = arrayAux.push(this.itensCarrinho[i].product.price.value)
-                this.parcial = arrayAux.push(this.itensCarrinho[i].product.price.installmentValue)
-            } else {
 
+            } else {
+                //diminui os valores do subtotal
+                this.total = this.total - this.itensCarrinho[i].product.price.value
+                this.parcial = this.parcial - this.itensCarrinho[i].product.price.installmentValue
             }
         }
-
-
-        console.log(id);
+        
         this.itensCarrinho = arrayAux;
-
 
     }
 
