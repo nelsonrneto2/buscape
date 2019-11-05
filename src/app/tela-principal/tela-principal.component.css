@@ -16,6 +16,9 @@
     cursor: pointer;
     cursor: hand;
 }
+.conteudo{
+    padding-top: 50px;
+}
 .cont{
     width: 25px;
     height: 25px;
@@ -64,6 +67,10 @@
 }
 .preco {
     color: #22b14c;
+    margin-block-start: 60px;
+}
+button.addCarrinho{
+    display: inline;
 }
 .menorPreco::after, .menorPreco::before{
     content: "";
