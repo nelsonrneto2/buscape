@@ -76,19 +76,17 @@ export class TelaPrincipalComponent implements OnInit {
 
     adicionarCarrinho(id) {
         let obj;
-        let verifica 
-        let tot = 1
         let cont = 0
 
         this.items.filter(d => { if (d.product.id == id) obj = d});
         this.itensCarrinho.filter(d => {if (d.product.id == id) cont = id})
         if(cont != id){
-            this.itensCarrinho.push(obj);      
+            this.itensCarrinho.push(obj)      
         }else{
             this.itensCarrinho.push(obj)
             console.log(obj);
-            
         }
+        
         
         
         
@@ -119,7 +117,7 @@ export class TelaPrincipalComponent implements OnInit {
     apagaItemCarrinho(id) {
 
         let arrayAux = []
-
+        let parar = false;
         //this.itensCarrinho.filter( d => {d.product.id !== id})
     
         //this.itensCarrinho.push(obj)
@@ -131,9 +129,7 @@ export class TelaPrincipalComponent implements OnInit {
         for (let i = 0; i <= this.itensCarrinho.length - 1; i++) {
             
             if (id != this.itensCarrinho[i].product.id) {
-                
                 arrayAux.push(this.itensCarrinho[i])
-
             } else {
                 //diminui os valores do subtotal
                 this.total = this.total - this.itensCarrinho[i].product.price.value

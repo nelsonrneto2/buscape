@@ -14,14 +14,6 @@
                 aria-expanded="false" src="../../assets/images/bars-solid.svg">
         </div>
 
-
-
-
-        <!--<div class="col-lg-1 col-md-1 col-sm-1"></div>
-
-            <img (click)="abrirCarrinho()" class=" navbar-toggler logoBars float-right " type="button-warning" data-toggle="collapse" data-target="#conteudoNavbarSuportado" 
-            aria-controls="conteudoNavbarSuportado" aria-expanded="false"src="../../assets/images/bars-solid.svg">-->
-
         <div class=" collapse navbar-collapse" id="conteudoNavbarSuportado">
             <div *ngFor="let a of itensCarrinho" class="corSubTotal container-fluid">
                 <div class="">
@@ -51,60 +43,41 @@
                             <p class="text text-weight-bold">Subtotal</p>
                         </div>
                         <div class="col">
-                            <a (click)="apagaCarrinho()" class="btn btn-danger text-white float-right">Esvaziar
-                                Carrinho
-                            </a>
+
                         </div>
                     </div>
 
                 </div>
 
-                <div class="container ">
+                <div class="container">
                     <div class="row font-weight-bold">
                         <div class="col">
                             <p class="">10 X {{this.parcial}}</p>
                         </div>
 
                     </div>
-                    <div class="row">
-                        <div class="col font-weight-bold">
+                    <div class="row font-weight-bold ">
+                        <div class="col">
                             <p class="">ou R$ {{this.total}} à vista</p>
                         </div>
+                        <div class="col">
+                            <a (click)="apagaCarrinho()" class="btn btn-danger text-white float-right esvaziar">Esvaziar
+                                Carrinho
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
 
                     </div>
                 </div>
             </div>
-
         </div>
 
     </div>
-    <!--<nav class="fixed-top navbar navbar-expand-lg navbar-warning bg-warning">
-        <a class="navbar-brand" href="#"><img class="logoPrincipal" src="../../assets/images/buscape-logo.png"></a>
-        <button (click)="abrirCarrinho()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
-            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon">oi</span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-            <div *ngFor="let a of intensCarrinho" class="navbar-nav mr-auto">
-                <div class="container">
-                    <div class="row">
-                        <div class="produtos">
-                            <p>Joao {{a.product.id}}</p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-           
-        </div>
-    </nav>-->
-
-
 
     <div class="conteudo">
 
-        <div *ngFor="let i of items"  class="card-body ">
+        <div *ngFor="let i of items" class="card-body ">
 
 
             <div class="container">
@@ -141,10 +114,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
-
             </div>
         </div>
     </div>

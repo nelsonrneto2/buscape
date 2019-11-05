@@ -32,6 +32,10 @@
     font-size: 15px;
 }
 
+.esvaziar{
+    cursor: pointer;
+}
+
 .logoPrincipal{
     width: 70px;
     margin-top: 5px;
