@@ -84,31 +84,44 @@ export class TelaPrincipalComponent implements OnInit {
 
     adicionarCarrinho(id) {
         let obj;
+        let verifica 
+        let tot = 1
+        let cont = 0
 
-
-        this.items.filter(d => { if (d.product.id == id) obj = d });
-
-        this.itensCarrinho.push(obj);
+        this.items.filter(d => { if (d.product.id == id) obj = d});
+        this.itensCarrinho.filter(d => {if (d.product.id == id) cont = id})
+        if(cont != id){
+            this.itensCarrinho.push(obj);      
+        }else{
+            this.itensCarrinho.push(obj)
+            console.log(obj);
+            
+        }
+        
+        
+        
         this.total = this.total + obj.product.price.value
         this.parcial = this.parcial + obj.product.price.installmentValue
-        console.log(this.total)
+        
 
+        
 
-
-
-        for (let i = 0; i <= this.itensCarrinho.length - 1; i++) {
-            console.log(this.itensCarrinho[i].product.price.value)
-            if (id == this.itensCarrinho[i].product.id) {
-
-            }
-        }
-
-
+        //for (let i = 0; i <= this.itensCarrinho.length - 1; i++) {
+        //    if (obj.product.id == this.itensCarrinho[i].product.id) {
+        //        console.log("igual")
+        //    }else{
+        //        console.log("nao")
+        //    }
+        //}
+    }
+    verificaId(id){
+        //let obj
+        //this.itensCarrinho.filter(d => {if (d.product.id == id) obj =d})
+        //this.itensCarrinho.push(obj)
     }
 
     abrirCarrinho() {
         this.itensCarrinho;
-        console.log(this.itensCarrinho)
     }
 
     apagaItemCarrinho(id) {
@@ -135,7 +148,7 @@ export class TelaPrincipalComponent implements OnInit {
                 this.parcial = this.parcial - this.itensCarrinho[i].product.price.installmentValue
             }
         }
-        
+
         this.itensCarrinho = arrayAux;
 
     }

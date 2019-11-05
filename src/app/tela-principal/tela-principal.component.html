@@ -51,7 +51,9 @@
                         </div>
                         <div class="col">
                             <a (click)="apagaCarrinho()" class="btn btn-danger text-white float-right">Esvaziar
-                                Carrinho</a>
+                                Carrinho
+                            </a>
+                            <a (click)="verificaId(this.itensCarrinho.id)" class="btn">Verifica</a>
                         </div>
                     </div>
 
@@ -124,7 +126,8 @@
                         </P>
 
                         <button class="btn btn-success addCarrinho" (click)="adicionarCarrinho(i.product.id)">Adicionar
-                            ao carrinho ></button>
+                            ao carrinho >
+                        </button>
 
 
                     </div>
